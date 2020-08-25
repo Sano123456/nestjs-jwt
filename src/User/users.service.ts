@@ -1,5 +1,4 @@
 import { Injectable } from '@nestjs/common';
-import { AuthService } from 'src/Auth/auth.service';
 export type User = any;
 
 
