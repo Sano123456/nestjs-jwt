@@ -4,6 +4,7 @@ import { AuthController } from './auth.controller';
 import { UsersModule } from 'src/User/users.module';
 
 import { PassportModule } from '@nestjs/passport';
+import { LocalStrategy } from './local.strategy';
 
 @Module({
   imports:[
@@ -11,9 +12,8 @@ import { PassportModule } from '@nestjs/passport';
     forwardRef(() => UsersModule), 
     PassportModule
   ],
-  providers: [AuthService],
+  providers: [AuthService, LocalStrategy],
   controllers: [AuthController],
-  exports:[AuthService]
+  exports:[AuthService, LocalStrategy]
 })
 export class AuthModule {}
- 
