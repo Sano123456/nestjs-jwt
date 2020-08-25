@@ -1,4 +1,5 @@
 import { Injectable } from '@nestjs/common';
+import { AuthService } from 'src/Auth/auth.service';
 export type User = any;
 
 
@@ -6,7 +7,9 @@ export type User = any;
 export class UsersService {
     private readonly users: User[];
 
-    constructor() {
+    constructor(
+        //private readonly authService: AuthService,
+    ) {
         this.users = [
           {
             id: 1,
